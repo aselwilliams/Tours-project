@@ -1,5 +1,7 @@
 import { useState,useEffect} from 'react';
 import './App.css';
+import Tours from './Tours';
+import Loading from './Loading'
 const url='https://course-api.com/react-tours-project'
 
 function App() {
@@ -22,12 +24,19 @@ function App() {
 
   useEffect(()=>{
     fetchTours();
-    
-  }, [])
+  }, []);
+
+  if(loading){
+    return (
+      <main>
+        <Loading />
+      </main>
+    )
+  }
   return (
-    <div className="App">
-   
-    </div>
+    <main>
+      <Tours tours={tours} />
+    </main>
   );
 }
 
