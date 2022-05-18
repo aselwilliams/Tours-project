@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
-function Tour() {
+function Tour({ id, image, info, price, name }) {
   return (
-    <div>Tour</div>
-  )
+    <article className="single-tour">
+      <img src={image} alt={name} />
+      <footer>
+        <div className="tour-info">
+          <h4>{name}</h4>
+        </div>
+      </footer>
+    </article>
+  );
 }
 
-export default Tour
+export default Tour;
